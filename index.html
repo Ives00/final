@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="bootstrap.min.css" rel="stylesheet">
 
     <title>Final Exam</title>
   </head>
   <body>
     <h1>Welcome to My Final</h1>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"> 
       <img src="sql.png" alt="" width="30" height="24" class="d-inline-block align-text-top">SQL</a>
@@ -31,23 +31,80 @@
 </nav>
 
 <h2>Installing PHP based applications</h2>
+<p>For this exam I chose to describe the installtion of Wordpress using Amazon Lightsail and Cyber Duck</p>
 <div id="list-example" class="list-group">
-  <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
-  <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
-  <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
-  <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+  <a class="list-group-item list-group-item-action" href="#list-item-1">Video</a>
+  <a class="list-group-item list-group-item-action" href="#list-item-2">How to Install</a>
+  <a class="list-group-item list-group-item-action" href="#list-item-3">Granting SQL access</a>
+  <a class="list-group-item list-group-item-action" href="#list-item-4">Cyberduck</a>
 </div>
 <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-  <h4 id="list-item-1">Item 1</h4>
+  <h4 id="list-item-1">Video</h4>
+  <p>Here is a short video on WordPress!</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/71EZb94AS1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <h4 id="list-item-2">Installation <img src="wp.jpeg"></h4>
   <p>...</p>
-  <h4 id="list-item-2">Item 2</h4>
-  <p>...</p>
-  <h4 id="list-item-3">Item 3</h4>
-  <p>...</p>
-  <h4 id="list-item-4">Item 4</h4>
+  <h4 id="list-item-3">Granting SQL Access</h4>
+ <p>...</p> 
+
+  <h4 id="list-item-4">Cyberduck<img src="duck.jpeg"></h4>
   <p>...</p>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create Instance and Download WordPress
+
+Using amazon Light Sail, create an instance which gives you an IP address for a website. Then go to www.wordpress.org to download wordpress to your computer. Connect through SSH via Lightsail to access MariaDB. Enter
+
+cat bitnami_application_password
+
+This gives you a password to access the MySQL. Use the command below to access the MySQL and it will request the generated password you were given to get access.
+
+mysql -u root -p
+
+Granting Access
+
+Now that we are in MySQL we need to create a database and its user. This will be beneficial into the manual installation of wordpress. Use the following command to create the Database and end it with a semicolon.
+
+CREATE DATABASE wordpress;
+
+Run the next command to create a user and password. And this will also create access for wordpress to your IP address.
+grant all privileges on wordpress.* TO 'wordpressdbuser'@'localhost' identified by 'wordpressdbpass1234';
+
+Cyberduck
+
+This application allows you to upload files. Open it and open the connection. Change the file transfer to SFTP. The password will be generated using a key from Lightsail. Once these files are uploaded and chosen you now can edit on WordPress!
