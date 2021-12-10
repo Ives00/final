@@ -1,110 +1,85 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+  .doc{background-color: honeydew }
+</style>
+<div class="doc">
+ <div class="container-md"> <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="bootstrap.min.css" rel="stylesheet">
 
-    <title>Final Exam</title>
-  </head>
-  <body>
-    <h1>Welcome to My Final</h1>
+  <title>Final Exam</title>
+</head>
+<body>
+  <h1>Welcome to My Final</h1>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"> 
-      <img src="sql.png" alt="" width="30" height="24" class="d-inline-block align-text-top">SQL</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Types</a>
-        <a class="nav-link" href="#">Other</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"> 
+        <img src="sql.png" alt="" width="30" height="24" class="d-inline-block align-text-top">SQL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Types</a>
+            <a class="nav-link" href="#">Other</a>
+          </div>
+        </div>
       </div>
+    </nav>
+
+    <h2>Installing PHP based applications</h2>
+    <p>For this exam I chose to describe the installtion of Wordpress using Amazon Lightsail and Cyber Duck</p>
+    <div id="list-example" class="list-group">
+      <a class="list-group-item list-group-item-action" href="#list-item-1">Video</a>
+      <a class="list-group-item list-group-item-action" href="#list-item-2">How to Install</a>
+      <a class="list-group-item list-group-item-action" href="#list-item-3">Granting SQL access</a>
+      <a class="list-group-item list-group-item-action" href="#list-item-4">Key</a>  
+      <a class="list-group-item list-group-item-action" href="#list-item-5">Cyberduck</a>
     </div>
-  </div>
-</nav>
+    <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+      <h4 id="list-item-1">Video</h4>
+      <p>Here is a short video on WordPress!</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/71EZb94AS1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h4 id="list-item-2">Installation <img src="wp.jpeg"></h4>
+      <p>Using amazon Light Sail, create an instance. This gives you an IP address for a website that you will soon deploy. Then go to www.wordpress.org to download wordpress to your computer. After that, gp back to Light Sail Instance and use "Connect through SSH" option to access MariaDB.</p>
+      <p>Enter the code below. This will give you a password to access mySQL</p>
 
-<h2>Installing PHP based applications</h2>
-<p>For this exam I chose to describe the installtion of Wordpress using Amazon Lightsail and Cyber Duck</p>
-<div id="list-example" class="list-group">
-  <a class="list-group-item list-group-item-action" href="#list-item-1">Video</a>
-  <a class="list-group-item list-group-item-action" href="#list-item-2">How to Install</a>
-  <a class="list-group-item list-group-item-action" href="#list-item-3">Granting SQL access</a>
-  <a class="list-group-item list-group-item-action" href="#list-item-4">Cyberduck</a>
-</div>
-<div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-  <h4 id="list-item-1">Video</h4>
-  <p>Here is a short video on WordPress!</p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/71EZb94AS1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <h4 id="list-item-2">Installation <img src="wp.jpeg"></h4>
-  <p>...</p>
-  <h4 id="list-item-3">Granting SQL Access</h4>
- <p>...</p> 
 
-  <h4 id="list-item-4">Cyberduck<img src="duck.jpeg"></h4>
-  <p>...</p>
-</div>
+      <p class="text-secondary"><strong>cat bitnami_application_password</strong></p>
+
+      <p>Use the command below to access the MySQL and it will request the generated password you were given to get access.</p>
+
+      <p class="text-secondary"><strong>mysql -u root -p </strong></p>
+
+      <h4 id="list-item-3">Granting SQL Access</h4>
+      <p>Now that we are in MySQL we need to create a database and its user. This will be beneficial into the manual installation of wordpress. Use the following command to create the Database and end it with a semicolon.</p>
+
+      <p class="text-secondary"><strong> CREATE DATABASE wordpress; </strong></p>
+
+      <p>Run the next command to create a user and password. And this will also create access for wordpress to your IP address.</p>
+
+      <p class="text-secondary"> <strong>grant all privileges on wordpress.* TO 'wordpressdbuser'@'localhost' identified by 'wordpressdbpass1234';</strong></p> 
+
+      <h4 id="list-item-4">Access Key</h4>
+
+      <p>You will need a key to access files via cyberduck as you progress through this process. To create the key go to Account (by search bar). From the drop menu click <strong>account</strong>. From there click on the tab that says <strong>SSH Keys</strong>.</p>
+
+      <p>From here you click the <strong> + create</strong> button. Choose your zone. Then, if asked, label the key. This will give a key on the instance and a downlaoded one (which you need for Cyberduck).</p>
+
+      <h4 id="list-item-5">Cyberduck<img src="duck.jpeg"></h4>
+
+      <p>Cyberduck is an application that allows you to upload files. After downloading (if needed) open it and open the connection. The shortcut for MacOS is <strong>COMMAND + O </strong>. Once in the open connection you will need to change the file transfer to SFTP. The password will be generated using a key you created from Lightsail. Once these files are uploaded and chosen you now can edit on WordPress!</p>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
   </body>
+</div>
+</div> 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Create Instance and Download WordPress
-
-Using amazon Light Sail, create an instance which gives you an IP address for a website. Then go to www.wordpress.org to download wordpress to your computer. Connect through SSH via Lightsail to access MariaDB. Enter
-
-cat bitnami_application_password
-
-This gives you a password to access the MySQL. Use the command below to access the MySQL and it will request the generated password you were given to get access.
-
-mysql -u root -p
-
-Granting Access
-
-Now that we are in MySQL we need to create a database and its user. This will be beneficial into the manual installation of wordpress. Use the following command to create the Database and end it with a semicolon.
-
-CREATE DATABASE wordpress;
-
-Run the next command to create a user and password. And this will also create access for wordpress to your IP address.
-grant all privileges on wordpress.* TO 'wordpressdbuser'@'localhost' identified by 'wordpressdbpass1234';
-
-Cyberduck
-
-This application allows you to upload files. Open it and open the connection. Change the file transfer to SFTP. The password will be generated using a key from Lightsail. Once these files are uploaded and chosen you now can edit on WordPress!
